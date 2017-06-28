@@ -1,0 +1,5 @@
+#define MAX_ARRAY 100
+#define MAX_EACH_ARRAY 10
+
+
+vector<vector<int>> countVector(MAX_ARRAY , vector<int>(MAX_EACH_ARRAY, 0));
