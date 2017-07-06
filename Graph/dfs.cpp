@@ -2,7 +2,7 @@ vector < vector < int > > adj;
 
 vector<bool> visited;
 
-void dfs(int heree){
+void dfs(int here){
 	cout << "DFS visits " << here << endl;
 	visited[here] = true;
 
