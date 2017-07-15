@@ -92,9 +92,12 @@
 	2.25. v와 v2를 swap한다. 
 	 v.swap(v2)
 
-
-
-
+	2.26. v에서 item 찾기 find
+	#include <algorithm>
+	if ( find(vector.begin(), vector.end(), item) != vector.end() )
+	   do_this();
+	else
+	   do that();
 
 3. 연산자 
 
