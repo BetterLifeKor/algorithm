@@ -1,0 +1,5 @@
+typedef std::vector<MyClass>      MyClassSet;
+typedef std::map<int, MyClassSet> MyClassSetMap;
+
+MyClassSetMap map;
+map.insert(MyClassSetMap::value_type(10, MyClassSet()));
