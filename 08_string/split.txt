@@ -1,0 +1,16 @@
+#include <boost/algorithm/string.hpp>
+
+using namespace std;
+
+vector<string> strs;
+int main(){
+    string s;
+    cin >> s;
+    boost::split(strs, s, boost::is_any_of(","));
+    cout << strs[0] << endl;
+    cout << strs[1] << endl;
+    return 0;
+}
+
+
+
