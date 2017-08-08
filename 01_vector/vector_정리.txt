@@ -1,4 +1,4 @@
-1. 생성자
+﻿1. 생성자
 	1.1. v는 빈 컨테이너이다. 
 	vector v
 
@@ -116,3 +116,25 @@
 	3.5. v의 i번째 원소를 참조한다. 
 	 v[i]
 
+
+
+사용 예
+1. vector에서 특정 값 지우기
+vector<int> eraseElement(vector<int> a, int b) {
+	for (auto j = a.begin(); j != a.end(); j++) {
+		if (b == *j) {
+			j = a.erase(j);
+			break;
+		}
+	}
+	return a;
+}
+
+vector<int> eraseAllElement(vector<int> a, int b) {
+	for (auto j = a.begin(); j != a.end(); j++) {
+		if (b == *j) {
+			j = a.erase(j);
+		}
+	}
+	return a;
+}

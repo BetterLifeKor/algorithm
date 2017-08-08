@@ -1,28 +1,27 @@
-// _CRT_SECURE_NO_WARNINGS
+//_CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
-
 #define FOR(i,n) for(int i =0; i<n; i++)
 
 using namespace std;
+
+typedef enum {OFF, ON} FLAG;
 
 int MIN(int a, int b) {	return a < b ? a : b;}
 int MAX(int a, int b) {	return a > b ? a : b;}
 int MAX3(int a, int b, int c) {	return MAX(MAX(a, b), c);}
 int MIN3(int a, int b, int c) {	return MIN(MIN(a, b), c);}
-
 vector<int> myVector;
 vector<int> myCache;
 vector<vector<int>> myVector2;
 vector<vector<int>> myCache2;
 
-int main() {
+int main(){
 	int T, n;
 	scanf("%d", &T);
 
-	while (T--) {
+	while(T--){
 		scanf("%d", &n);
 	}
 
