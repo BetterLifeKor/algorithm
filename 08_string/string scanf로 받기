@@ -1,0 +1,5 @@
+char c[5001];
+
+scanf("%100s", c);
+
+string s = c;
