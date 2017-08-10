@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #define FOR(i,n) for(int i =0; i<n; i++)
 
@@ -16,6 +17,7 @@ int MAX3(int a, int b, int c) { return MAX(MAX(a, b), c); }
 int MIN3(int a, int b, int c) { return MIN(MIN(a, b), c); }
 
 void display(vector<int> v) { for (auto a : v) printf("%d\n", a); }
+void displayString(vector<string> v) { for (auto a : v) printf("%s", a.c_str()); printf("\n"); }
 void display2(vector<vector<int>> v) {
 	int n_r = v.size(); int n_c = v[0].size();
 	for (int i = 0; i < n_r; i++) {
@@ -31,8 +33,10 @@ vector<vector<int>> myV2;
 vector<vector<int>> myD2;
 
 int main() {
-	myV2 = { { 1,2,3 },{ 4,5,6 } };
-	display2(myV2);
-
+	int t, n;
+	scanf("%d", &t);
+	while(t--) {
+		scanf("%d", &n);
+	}
 	return 0;
 }
