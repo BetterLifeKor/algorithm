@@ -1,0 +1,8 @@
+void generic_swap(void *a, void *b, int size){
+	char t;
+	do{
+		t = *(char *)a;
+		*(char *)a++ = *(char *)b;
+		*(char *)b++ = t;
+	}while(--size > 0);
+}
