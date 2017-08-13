@@ -1,4 +1,6 @@
 //_CRT_SECURE_NO_WARNINGS
+// Date   : 2017.8.12.
+// Editor by BetterLife.Kor
 
 #include <iostream>
 #include <string>
