@@ -27,11 +27,32 @@ void displayV2(vector<vector<int>> v) {
 }
 void displayVS(vector<string> v) { for (auto a : v) printf("%s", a.c_str()); printf("\n"); }
 void displayQ(queue<int> q) {
-	queue<int> temp_q = q;
-	while (!temp_q.empty()) {
-		printf("%d\n", temp_q.front());
-		temp_q.pop();
+	while (!q.empty()) {
+		printf("%d\n", q.front());
+		q.pop();
 	}
+}
+
+bool find_Q(queue<int> Q, int value) {
+	bool flag = false;
+	while (!Q.empty()) {
+		if (Q.front() == value)
+			{flag = true; break;}
+		Q.pop();}
+	return flag;
+}
+int find_Q2(queue<int> Q, queue<int> Q2, int value) {
+	while (!Q.empty()) {
+		if (Q.front() == value)	break;
+		Q.pop(); Q2.pop();}
+	return Q2.front();
+}
+int count_Q(queue<int> Q, int value) {
+	int count = 0;
+	while (!Q.empty()) {
+		if (Q.front() == value) count++;
+		Q.pop();}
+	return count;
 }
 
 vector<int> myV; // myV = vector<int>(num_r,0)
