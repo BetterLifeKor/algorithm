@@ -5,34 +5,42 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue
 #include <algorithm>
 
 #define FOR(i,n) for(int i =0; i<n; i++)
 
 using namespace std;
 
-typedef enum { OFF, ON } FLAG;
-
 int MIN(int a, int b) { return a < b ? a : b; }
 int MAX(int a, int b) { return a > b ? a : b; }
 int MAX3(int a, int b, int c) { return MAX(MAX(a, b), c); }
 int MIN3(int a, int b, int c) { return MIN(MIN(a, b), c); }
 
-void display(vector<int> v) { for (auto a : v) printf("%d\n", a); }
-void displayString(vector<string> v) { for (auto a : v) printf("%s", a.c_str()); printf("\n"); }
-void display2(vector<vector<int>> v) {
+void displayV(vector<int> v) { for (auto a : v) printf("%d\n", a); }
+void displayV2(vector<vector<int>> v) {
 	int n_r = v.size(); int n_c = v[0].size();
 	for (int i = 0; i < n_r; i++) {
 		for (int j = 0; j < n_c; j++) { printf("%d\t", v[i][j]); }
 		printf("\n");
 	}
 }
+void displayVS(vector<string> v) { for (auto a : v) printf("%s", a.c_str()); printf("\n"); }
+void displayQ(queue<int> q) {
+	queue<int> temp_q = q;
+	while (!temp_q.empty()) {
+		printf("%d\n", temp_q.front());
+		temp_q.pop();
+	}
+}
 
-vector<int> myV;
-vector<int> myD;
+vector<int> myV; // myV = vector<int>(num_r,0)
+vector<int> myD; // myD = vector<int>(num_r,0)
 
-vector<vector<int>> myV2;
-vector<vector<int>> myD2;
+vector<vector<int>> myV2; // myV2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
+vector<vector<int>> myD2; // myD2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
+
+queue<int> myQ; 
 
 int main() {
 	int t, n;
