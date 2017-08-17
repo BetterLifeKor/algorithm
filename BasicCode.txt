@@ -1,11 +1,13 @@
+// Date   : 2017.8.18.
+// Title  : LGE CodeJam 1
+// Editor by Jihoon Kim
+
 //_CRT_SECURE_NO_WARNINGS
-// Date   : 2017.8.12.
-// Editor by BetterLife.Kor
 
 #include <iostream>
 #include <string>
 #include <vector>
-#include <queue
+#include <queue>
 #include <algorithm>
 
 #define FOR(i,n) for(int i =0; i<n; i++)
