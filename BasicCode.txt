@@ -1,8 +1,6 @@
-// Date   : 2017.8.18.
-// Title  : LGE CodeJam 1
+// Date   : 2017.8.19.
+// Title  : 2017 2nd LGECodeJam Problem 3
 // Editor by Jihoon Kim
-
-// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <string>
@@ -10,14 +8,18 @@
 #include <queue>
 #include <algorithm>
 
+_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 
 #define FOR(i,n) for(int i =0; i<n; i++)
+
+typedef long long iint;
 
 using namespace std;
 
 int MIN(int a, int b) { return a < b ? a : b; }
 double MIN2(double a, double b) { return a < b ? a : b; }
 int MIN3(int a, int b, int c) { return MIN(MIN(a, b), c); }
-int MIN3(int a, int b, int c) { return MIN(MIN(a, b), c); }
+
 int MAX(int a, int b) { return a > b ? a : b; }
 double MAX2(double a, double b) { return a > b ? a : b; }
 int MAX3(int a, int b, int c) { return MAX(MAX(a, b), c); }
