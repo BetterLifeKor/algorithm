@@ -6,9 +6,10 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <map>
 #include <algorithm>
 
-_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS 
 #define FOR(i,n) for(int i =0; i<n; i++)
 
