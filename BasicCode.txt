@@ -1,5 +1,5 @@
-// Date   : 2017.8.19.
-// Title  : 2017 2nd LGECodeJam Problem 3
+// Date   : 2017.8.27.
+// Title  : BOJ 
 // Editor by Jihoon Kim
 
 #include <iostream>
@@ -69,15 +69,17 @@ int count_Q(queue<int> Q, int value) {
 	return count;
 }
 
-vector<int> VV; // myV = vector<int>(num_r,0)
-vector<int> DD; // myD = vector<int>(num_r,0)
+vector<int> vv; // vv = vector<int>(num_r,0)
+vector<int> dd; // dd = vector<int>(num_r,0)
 
-vector<vector<int>> VV2; // myV2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
-vector<vector<int>> DD2; // myD2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
+vector<vector<int>> vv2; // vv2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
+vector<vector<int>> dd2; // dd2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
 
-queue<int> QQ;
+queue<int> qq;
 
 int main() {
+
+    ios_base::sync_with_stdio(false);
 	int t, n;
 
 	scanf("%d", &t);
