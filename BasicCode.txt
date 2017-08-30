@@ -9,22 +9,23 @@
 #include <map>
 #include <algorithm>
 
-// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS 
 #define FOR(i,n) for(int i =0; i<n; i++)
+#define M 100009
+#define INF 1e8
+#define MOD 1000000007
+using namespace std;
 
-typedef long long iint;
+typedef long long lint;
+typedef pair<long,double> pld;
+typedef pair<lint,lint> pll;
+
+// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 
 using namespace std;
 
-int MIN(int a, int b) { return a < b ? a : b; }
-double MIN2(double a, double b) { return a < b ? a : b; }
-int MIN3(int a, int b, int c) { return MIN(MIN(a, b), c); }
-
-int MAX(int a, int b) { return a > b ? a : b; }
-double MAX2(double a, double b) { return a > b ? a : b; }
-int MAX3(int a, int b, int c) { return MAX(MAX(a, b), c); }
-
+int min3(void a, void b, void c) { return min(min(a, b), c); }
+int max3(void a, void b, void c) { return max(max(a, b), c); }
 
 void displayV(vector<int> v) { for (auto a : v) printf("%d\n", a); }
 void displayV2(vector<vector<int>> v) {
