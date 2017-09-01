@@ -208,6 +208,7 @@ vector<vector2> cutPoly(const vector<vector2>& p, const vector2& a, const vector
 	return ret;
 }
 
+
 vector<vector2> intersection(const vector<vector2>& p, double x1, double y1, double x2, double y2) {
 	vector2 a(x1, y1), b(x2, y1), c(x2, y2), d(x1, y2);
 	vector<vector2> ret = cutPoly(p, a, b);
