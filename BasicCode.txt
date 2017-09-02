@@ -2,6 +2,8 @@
 // Title  : 
 // Editor by Jihoon Kim
 
+// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,36 +12,36 @@
 #include <algorithm>
 
 #define _CRT_SECURE_NO_WARNINGS 
-#define FOR(i,n) for(int i =0; i<n; i++)
-#define M 100009
-#define INF 1e8
+#define EPSILON 1e-9
+#define INF 1e20
 #define MOD 1000000007
+#define FOR(i,n) for(int i =0; i<n; i++)
+#define FOR2(i,n) for(int i = 1; i<=n; i++)
+
 using namespace std;
 
 typedef long long lint;
-typedef pair<long,double> pld;
-typedef pair<lint,lint> pll;
+typedef pair<long, double>	pld;
+typedef pair<lint, lint>	pll;
 
-// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 
 using namespace std;
 
-int min3(void a, void b, void c) { return min(min(a, b), c); }
-int max3(void a, void b, void c) { return max(max(a, b), c); }
+int min3(int a, int b, int c) { return min(min(a, b), c); }
+int max3(int a, int b, int c) { return max(max(a, b), c); }
+lint min3(lint a, lint b, lint c) { return min(min(a, b), c); }
+lint max3(lint a, lint b, lint c) { return max(max(a, b), c); }
+double min3(double a, double b, double c) { return min(min(a, b), c); }
+double max3(double a, double b, double c) { return max(max(a, b), c); }
 
-vector<int> vv; // vv = vector<int>(num_r,0)
-vector<int> dd; // dd = vector<int>(num_r,0)
-
-vector<vector<int>> vv2; // vv2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
-vector<vector<int>> dd2; // dd2 = vector<vector<int>>(num_r,vector<int>(num_c,0))
-
-queue<int> qq;
+vector<int> 		 v1;	// myV = vector<int>(num_r,0)
+vector<vector<int>>  vv1;	// myVV = vector<vector<int>>(num_r,vector<int>(num_c,0))
+map<int, int> m1;
+queue<int> q1;
 
 int main() {
-
-    ios_base::sync_with_stdio(false);
+	ios_base::sync_with_stdio(false);
 	int t, n;
-
 	scanf("%d", &t);
 	while (t--) {
 		scanf("%d", &n);
