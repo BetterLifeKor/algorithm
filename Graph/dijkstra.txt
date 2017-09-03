@@ -1,0 +1,76 @@
+// Date   : 2017.9.2.
+// Title  : 
+// Editor by BetterLife
+
+// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <algorithm>
+
+#define EPSILON 1e-9
+#define INF 1e9
+#define MOD 1000000007
+
+using namespace std;
+typedef pair<int, int>		pii;
+
+using namespace std;
+struct Edge {
+	int to;
+	int weight;
+	Edge(int to, int weight) : to(to), weight(weight) {
+	}
+};
+
+vector<Edge> Graph[1001];
+int dist[1001];
+bool check[1001];
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	int V, E;
+	int fromV, toV, weightE;
+	int startV, endV;
+	scanf("%d", &V);
+	scanf("%d", &E);
+	for (int i = 0; i < E; i++) {
+		scanf("%d %d %d", &fromV, &toV, &weightE);
+		Graph[fromV].emplace_back(Edge(toV, weightE));
+		//Graph[toV].emplace_back(Edge(fromV, weightE));
+	}
+	scanf("%d %d", &startV, &endV);
+	for (int i = 1; i <= V; i++) {
+		dist[i] = INF;
+	}
+	dist[startV] = 0;
+	priority_queue<pii> q;
+
+	q.push(make_pair(0, startV));
+	while (!q.empty()) {
+		auto p = q.top();
+		q.pop();
+		int x = p.second;
+		if (check[x]) {
+			continue;
+		}
+		check[x] = true;
+		for (int i = 0; i < Graph[x].size(); i++) {
+			int y = Graph[x][i].to;
+			if (dist[y] > dist[x] + Graph[x][i].weight) {
+				dist[y] = dist[x] + Graph[x][i].weight;
+				q.push(make_pair(-dist[y], y));
+			}
+		}
+	}
+	if (dist[endV] >= INF) {
+		printf("INF\n");
+	}
+	else {
+		printf("%d\n", dist[endV]);
+	}
+	return 0;
+}
+

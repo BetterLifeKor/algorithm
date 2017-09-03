@@ -1,6 +1,6 @@
 // Date   : 2017.9.2.
 // Title  : 
-// Editor by Jihoon Kim
+// Editor by BetterLife
 
 // _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
 
@@ -34,7 +34,7 @@ lint max3(lint a, lint b, lint c) { return max(max(a, b), c); }
 double min3(double a, double b, double c) { return min(min(a, b), c); }
 double max3(double a, double b, double c) { return max(max(a, b), c); }
 
-vector<int> 		 v1;	// myV = vector<int>(num_r,0)
+vector<int> v1;	// myV = vector<int>(num_r,0)
 vector<vector<int>>  vv1;	// myVV = vector<vector<int>>(num_r,vector<int>(num_c,0))
 map<int, int> m1;
 queue<int> q1;
