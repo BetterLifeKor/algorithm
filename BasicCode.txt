@@ -41,9 +41,9 @@ queue<int> q1;
 
 int main() {
 	ios_base::sync_with_stdio(false);
-	int t, n;
-	scanf("%d", &t);
-	while (t--) {
+	int T; scanf("%d",&T); while(T--){
+	while (T--) {
+		int n;
 		scanf("%d", &n);
 	}
 	return 0;
