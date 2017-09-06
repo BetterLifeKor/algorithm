@@ -1,4 +1,4 @@
-// Date   : 2017.9.2.
+// Date   : 2017.9.6.
 // Title  : 
 // Editor by BetterLife
 
@@ -41,10 +41,10 @@ queue<int> q1;
 
 int main() {
 	ios_base::sync_with_stdio(false);
-	int T; scanf("%d",&T); while(T--){
-	while (T--) {
+	int T; scanf("%d", &T); while (T--) {
 		int n;
 		scanf("%d", &n);
+
 	}
 	return 0;
 }
