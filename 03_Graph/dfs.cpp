@@ -6,7 +6,7 @@ void dfs(int here){
 	cout << "DFS visits " << here << endl;
 	visited[here] = true;
 
-	for (int i = 0; i < adf[here].size(); ++i){
+	for (int i = 0; i < adj[here].size(); ++i){
 		int there = adj[here][i];
 
 		if(!visited[there])

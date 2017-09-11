@@ -3,13 +3,15 @@
 // Editor by BetterLife
 
 // _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <queue>
 #include <map>
-#include <algorithm>
-#include <utility>
+#include <algorithm>	// sort
+#include <utility>	// pair
+#include <cmath>	// pow(), sqrt()
 
 #define EPSILON 1e-9
 #define INF 1e10
@@ -18,6 +20,8 @@
 #define FOR2(i,n) for(int i = 1; i<=n; i++)
 
 using namespace std;
+typedef vector<int> vi;
+typedef vector<vector<int>> vvi;
 typedef long long lint;
 
 int main() {
