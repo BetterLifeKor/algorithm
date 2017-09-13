@@ -13,7 +13,7 @@
 #include <utility>		// pair
 #include <cmath>		// pow(), sqrt()
 
-#define EPSILON 1e-9
+#define EPS 1e-9
 #define INF 1e10
 #define MOD 1000000007
 #define FOR(i,n) for(int i =0; i<n; i++)
@@ -21,7 +21,7 @@
 
 using namespace std;
 
-// ************** typedef(start) ************** //
+// typedef ----------------------------------- //
 typedef long long lint;
 
 typedef vector<int> vi;
@@ -30,25 +30,28 @@ typedef vector<vector<int>> vvi;
 typedef pair<int, int> pii;
 typedef vector<pair<int, int>> vpii;
 
-// ************** typedef(end) ************** //
+// ------------------------------------------- //
 
-// ************** struct(start) ************** //
+// struct ------------------------------------ //
 typedef struct point {
 	//char name[20]; // Point p; strcpy(p.name, "BetterLife");
 	int x;
 	int y;
 	int index = 0;
 }Point;
+// ------------------------------------------- //
 
-
-// ************** struct(end) ************** //
-
-// ************** Global Variable(start) ************** //
+// Global Variable --------------------------- //
 int n;
 int m;
-vi myVector1;
-vvi myVector2;
-// ************** Global Variable(end) ************** //
+vi v;
+// ------------------------------------------- //
+
+// Function ---------------------------------- //
+void solve() {
+
+}
+// ------------------------------------------- //
 
 int main() {
 	//ios_base::sync_with_stdio(false);
@@ -56,18 +59,10 @@ int main() {
 		scanf("%d", &n);
 		scanf("%d %d", &n, &m);
 
-		myVector1.clear();
-		myVector1 = vi(n);
+		v.clear();
+		v = vi(n);
 		FOR(i, n) {
-			scanf("%d", &myVector1[i]);
-		}
-
-		myVector2.clear();
-		myVector2 = vvi(n, vi(m));
-		FOR(i, n) {
-			FOR(j, m){
-				scanf("%d", &myVector2[i][j]);
-			}
+			scanf("%d", &v[i]);
 		}
 
 	}
