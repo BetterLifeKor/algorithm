@@ -58,11 +58,17 @@ int main() {
 
 		myVector1.clear();
 		myVector1 = vi(n);
-		FOR(i, n) scanf("%d", &myVector1[i]);
+		FOR(i, n) {
+			scanf("%d", &myVector1[i]);
+		}
 
 		myVector2.clear();
 		myVector2 = vvi(n, vi(m));
-		FOR(i, n) FOR(j, m)	scanf("%d", &myVector2[i][j]);
+		FOR(i, n) {
+			FOR(j, m){
+				scanf("%d", &myVector2[i][j]);
+			}
+		}
 
 	}
 	return 0;
