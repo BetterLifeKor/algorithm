@@ -13,8 +13,10 @@
 #include <utility>		// pair
 #include <cmath>		// pow(), sqrt()
 
-#define EPS 1e-9
-#define INF 1e10
+#define EPSILON 1e-9
+#define INF 987654321
+#define INF_LONG 9123123123123123123
+#define INF_DOUBLE 1.7E+300
 #define MOD 1000000007
 #define FOR(i,n) for(int i =0; i<n; i++)
 #define FOR2(i,n) for(int i = 1; i<=n; i++)

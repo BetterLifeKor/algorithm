@@ -1,0 +1,81 @@
+// Date   : 2017.9.2.
+// Title  : 
+// Editor by BetterLife
+
+// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include <iomanip>	//setprecision
+
+#define EPSILON 1e-9
+#define INF 987654321
+#define INF_LONG 9123123123123123123
+#define INF_DOUBLE 1.7E+300
+#define MOD 1000000007
+
+using namespace std;
+typedef pair<double, int>		pid;
+
+using namespace std;
+struct Edge {
+	int to;
+	double weight;
+	Edge(int to, double weight) : to(to), weight(weight) {
+	}
+};
+
+vector<Edge> Graph[10001];
+double dist[10001];
+bool check[10001];
+
+int main() {
+	cout.precision(30);
+	cout.setf(ios::fixed, ios::floatfield);
+	ios::sync_with_stdio(false);
+	int V, E;
+	int fromV, toV;
+	double weightE;
+	int startV, endV;
+	int T; scanf("%d", &T); while(T--){
+		scanf("%d", &V);
+		scanf("%d", &E);
+		for (int i = 0; i < E; i++) {
+			scanf("%d %d %lf", &fromV, &toV, &weightE);
+			Graph[fromV].emplace_back(Edge(toV, log10(weightE)));
+			Graph[toV].emplace_back(Edge(fromV, log10(weightE)));
+		}
+		startV = 0;
+		endV = V - 1;
+		for (int i = 1; i < V; i++) {
+			dist[i] = INF_DOUBLE;
+		}
+		dist[startV] = log10(1.0f);
+		priority_queue<pid> q;
+
+		q.push(make_pair(dist[startV], startV));
+		while (!q.empty()) {
+			auto p = q.top();
+			q.pop();
+			int x = p.second;
+			if (check[x]) {
+				continue;
+			}
+			check[x] = true;
+			for (int i = 0; i < Graph[x].size(); i++) {
+				int y = Graph[x][i].to;
+				if (dist[y] > dist[x] + Graph[x][i].weight) {
+					dist[y] = dist[x] + Graph[x][i].weight;
+					q.push(make_pair(-dist[y], y));
+				}
+			}
+		}
+		cout << setprecision(10) << pow(10, dist[endV]) << endl;
+		//printf("%.10f\n", dist[endV]);
+	}
+	return 0;
+}
+
