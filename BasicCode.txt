@@ -20,6 +20,7 @@
 #define MOD 1000000007
 #define FOR(i,n) for(int i =0; i<n; i++)
 #define FOR2(i,n) for(int i = 1; i<=n; i++)
+#define FORk(i,k,n) for(int i = k; i<n; i++)
 
 using namespace std;
 
