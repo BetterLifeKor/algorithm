@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 void findCircle (int x, vector<int>& circle, vector< vector<int> > street){
 	if (street[x].empty){ 
 		return *circle.clear;

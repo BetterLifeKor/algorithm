@@ -1,0 +1,87 @@
+문제 설명
+단어 퍼즐은 주어진 단어 조각들을 이용해서 주어진 문장을 완성하는 퍼즐입니다. 이때, 주어진 각 단어 조각들은 각각 무한개씩 있다고 가정합니다. 예를 들어 주어진 단어 조각이 [“ba”, “na”, “n”, “a”]인 경우 "ba", "na", "n", "a" 단어 조각이 각각 무한개씩 있습니다. 이때, 만들어야 하는 문장이 “banana”라면 “ba”, “na”, “n”, “a”의 4개를 사용하여 문장을 완성할 수 있지만, “ba”, “na”, “na”의 3개만을 사용해도 “banana”를 완성할 수 있습니다. 사용 가능한 단어 조각들을 담고 있는 배열 strs와 완성해야 하는 문자열 t가 매개변수로 주어질 때, 주어진 문장을 완성하기 위해 사용해야 하는 단어조각 개수의 최솟값을 return 하도록 solution 함수를 완성해 주세요. 만약 주어진 문장을 완성하는 것이 불가능하면 -1을 return 하세요.
+
+제한사항
+strs는 사용 가능한 단어 조각들이 들어있는 배열로, 길이는 1 이상 100 이하입니다.
+strs의 각 원소는 사용 가능한 단어조각들이 중복 없이 들어있습니다.
+사용 가능한 단어 조각들은 문자열 형태이며, 모든 단어 조각의 길이는 1 이상 5 이하입니다.
+t는 완성해야 하는 문자열이며 길이는 1 이상 20,000 이하입니다.
+모든 문자열은 알파벳 소문자로만 이루어져 있습니다.
+
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <queue>
+#include <map>
+
+using namespace std;
+int minCount = 20001;
+int dfs(vector<string> strs, string t, int pos, int count) {
+	if (count > minCount) 
+		return count - 1;
+	if (t.size() == pos) {
+		minCount = minCount > count ? count : minCount;
+		return count - 1;
+	}
+	int strs_size = strs.size();
+	string part_t;
+	for (int i = 0; i < strs_size; i++) {
+		if (pos + strs[i].size() > t.size()) continue;
+		part_t.assign(&t[pos], &t[pos + strs[i].size()]);
+		if (part_t == strs[i])
+			count = dfs(strs, t, pos + strs[i].size(), count + 1);
+	}
+	return count - 1;
+}
+queue<string> q;
+map<string, bool> m;
+bool bfs(vector<string> strs, int n, int count) {
+
+	int q_size = q.size();
+	while(q_size--){
+		string new_t = q.front(); q.pop();
+		string input_t;
+		string part_t;
+		for (int i = 0; i < n; i++) {
+			if (new_t == strs[i]) {
+				minCount = count;
+				return true;
+			}
+			if (new_t.size() < strs[i].size()) continue;
+			part_t.assign(new_t.begin(), new_t.begin() + strs[i].size());
+			if (part_t == strs[i]) {
+				input_t.assign(&new_t[0] + strs[i].size(), &new_t[new_t.size()]);
+				if(!m[input_t])	q.push(input_t);
+				m[input_t] = true;
+			}
+		}
+	}
+	if (q.size() == 0) return false;
+	else return bfs(strs, n, count+1);
+}
+
+int solution(vector<string> strs, string t)
+{
+	int answer = 0;
+	int count = 0;
+
+	// dfs(strs, t, 0, 0);
+	//if (minCount == 20001) answer = -1;
+	//else answer = minCount;
+
+	q.push(t);
+	m[t] = true;
+	int n = strs.size();
+	if (bfs(strs, n, 1)) answer = minCount;
+	else answer = -1;
+	
+	
+	return answer;
+}
+
+int main() {
+	vector<string> strs{ "ba", "an", "nan", "ban", "n" };
+	string t = "banana";
+	cout << solution(strs, t);
+	return 0;
+}
