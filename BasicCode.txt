@@ -27,9 +27,9 @@ using namespace std;
 // struct ------------------------------------ //
 typedef struct point {
 	//char name[20]; // Point p; strcpy(p.name, "BetterLife");
-	int x=0;
-	int y=0;
-	int id=0;
+	int x = 0;
+	int y = 0;
+	int id = 0;
 }Point;
 // ------------------------------------------- //
 
@@ -46,8 +46,9 @@ typedef vector<pair<int, int>> vpii;
 
 // Global Variable --------------------------- //
 int n;
-int m;
-vi v;
+int a, b;
+vector<int> myVector;
+vector<vector<int>> myVector2;
 // ------------------------------------------- //
 
 // Function ---------------------------------- //
@@ -59,14 +60,13 @@ void solve() {
 int main() {
 	//ios_base::sync_with_stdio(false);
 	int T; scanf("%d", &T); while (T--) {
+		int temp, temp1, temp2;
 		scanf("%d", &n);
-		scanf("%d %d", &n, &m);
+		scanf("%d %d", &a, &b);
 
-		v.clear();
-		v = vi(n);
-		FOR(i, n) {
-			scanf("%d", &v[i]);
-		}
+		// myVector.clear();
+		// myVector = vector<int>(n, 0);
+
 
 	}
 	return 0;
