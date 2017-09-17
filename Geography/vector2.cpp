@@ -1,4 +1,4 @@
-
+#include <assert.h>
 const double PI = 2.0*acos(0.0);
 // 2차원 벡터를 표현한다.
 struct vector2 {

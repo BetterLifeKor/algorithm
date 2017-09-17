@@ -24,6 +24,15 @@
 
 using namespace std;
 
+// struct ------------------------------------ //
+typedef struct point {
+	//char name[20]; // Point p; strcpy(p.name, "BetterLife");
+	int x=0;
+	int y=0;
+	int id=0;
+}Point;
+// ------------------------------------------- //
+
 // typedef ----------------------------------- //
 typedef long long lint;
 
@@ -33,15 +42,6 @@ typedef vector<vector<int>> vvi;
 typedef pair<int, int> pii;
 typedef vector<pair<int, int>> vpii;
 
-// ------------------------------------------- //
-
-// struct ------------------------------------ //
-typedef struct point {
-	//char name[20]; // Point p; strcpy(p.name, "BetterLife");
-	int x;
-	int y;
-	int index = 0;
-}Point;
 // ------------------------------------------- //
 
 // Global Variable --------------------------- //

@@ -1,22 +1,4 @@
-## 행 지우기
-
-unsigned rowToDelete = 2;
-
-if (myVector.size() > rowToDelete)
-{
-  myVector.erase( myVector.begin() + rowToDelete );
-}
-
-## 행 지우기 함수
-vector<vector<int>> deleteRow(vector<vector<int>> myVector, int rowToDelete){
-	if (myVector.size() > rowToDelete)
-	{
-		myVector.erase( myVector.begin() + rowToDelete );
-	}
-	return myVector;
-}
-
-## 열 지우기
+// method 1
 
 unsigned columnToDelete = 2;
 
@@ -28,7 +10,7 @@ for (unsigned i = 0; i < myVector.size(); ++i)
   }
 }
 
-## 열 지우기 함수
+// method 2
 vector<vector<int>> deleteCol(vector<vector<int>> myVector, int columnToDelete){
 	for (unsigned i = 0; i < myVector.size(); ++i)	
 	{

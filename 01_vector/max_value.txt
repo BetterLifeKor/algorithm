@@ -1,2 +1,0 @@
-
-	int MaxValue = *max_element(my_vector.begin(), my_vector.end());
