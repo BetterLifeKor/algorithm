@@ -1,5 +1,6 @@
 
 void displayV(vector<int> v) { for (auto a : v) printf("%d\n", a); }
+
 void displayV2(vector<vector<int>> v) {
 	int n_r = v.size(); int n_c = v[0].size();
 	for (int i = 0; i < n_r; i++) {
@@ -7,7 +8,10 @@ void displayV2(vector<vector<int>> v) {
 		printf("\n");
 	}
 }
+
+
 void displayVS(vector<string> v) { for (auto a : v) printf("%s", a.c_str()); printf("\n"); }
+
 void displayQ(queue<int> q) {
 	while (!q.empty()) {
 		printf("%d\n", q.front());
@@ -26,6 +30,7 @@ bool find_Q(queue<int> Q, int value) {
 	}
 	return flag;
 }
+
 int find_Q2(queue<int> Q, queue<int> Q2, int value) {
 	while (!Q.empty()) {
 		if (Q.front() == value)	break;
@@ -33,6 +38,7 @@ int find_Q2(queue<int> Q, queue<int> Q2, int value) {
 	}
 	return Q2.front();
 }
+
 int count_Q(queue<int> Q, int value) {
 	int count = 0;
 	while (!Q.empty()) {
