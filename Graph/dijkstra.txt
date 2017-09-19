@@ -25,26 +25,23 @@ struct Edge {
 	}
 };
 
-vector<Edge> Graph[1001];
-int dist[1001];
-bool check[1001];
+vector<vector<Edge>> Graph;
+vector<bool> check;
 
-int main() {
-	ios_base::sync_with_stdio(false);
-	int V, E;
+int V, E;
+int startV, endV;
+
+void makeGraph(int E) {
 	int fromV, toV, weightE;
-	int startV, endV;
-	scanf("%d", &V);
-	scanf("%d", &E);
 	for (int i = 0; i < E; i++) {
 		scanf("%d %d %d", &fromV, &toV, &weightE);
 		Graph[fromV].emplace_back(Edge(toV, weightE));
-		//Graph[toV].emplace_back(Edge(fromV, weightE));
+		Graph[toV].emplace_back(Edge(fromV, weightE));
 	}
-	scanf("%d %d", &startV, &endV);
-	for (int i = 1; i <= V; i++) {
-		dist[i] = INF;
-	}
+}
+vector<int> getDistance(int startV) {
+	check = vector<bool>(V, false);
+	vector<int> dist(V,INF);
 	dist[startV] = 0;
 	priority_queue<pii> q;
 
@@ -65,12 +62,31 @@ int main() {
 			}
 		}
 	}
-	if (dist[endV] >= INF) {
-		printf("INF\n");
-	}
-	else {
-		printf("%d\n", dist[endV]);
+	return dist;
+}
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	int T; scanf("%d", &T);while(T--){
+		scanf("%d", &V);
+		scanf("%d", &E);
+		Graph= vector<vector<Edge>>(V);
+		makeGraph(E);	
+		//scanf("%d %d", &startV, &endV);
+		int minDistance = INF;
+		int minIndex = -1;
+		for (int startV = 0; startV < V; startV++) {;
+			vector<int> distV;
+			int dist = 0;
+			distV = getDistance(startV);
+			for (int i = 0; i < distV.size(); i++) dist += distV[i];
+			if (minDistance > dist) {
+				minIndex = startV;
+				minDistance = dist;
+			}
+
+		}
+		cout << minIndex << endl;
 	}
 	return 0;
 }
-
