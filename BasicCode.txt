@@ -1,73 +1,11 @@
-// Date   : 2017.9.20.
-// Title  : 
-// Editor by BetterLife
-
-// _MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <queue>
-#include <map>
-#include <algorithm>	// sort
-#include <utility>		// pair
-#include <cmath>		// pow(), sqrt()
-
-#define EPSILON 1e-9
-#define INF 987654321
-#define INF_LONG 9123123123123123123
-#define INF_DOUBLE 1.7E+300
-#define MOD 1000000007
-#define FOR(i,n) for(int i =0; i<n; i++)
-#define FOR2(i,n) for(int i = 1; i<=n; i++)
-#define FORk(i,k,n) for(int i = k; i<n; i++)
-
+#include <cstdio>
 using namespace std;
 
-// struct ------------------------------------ //
-typedef struct point {
-	//char name[20]; // Point p; strcpy(p.name, "BetterLife");
-	int x = 0;
-	int y = 0;
-	int id = 0;
-}Point;
-// ------------------------------------------- //
-
-// typedef ----------------------------------- //
-typedef long long lint;
-
-typedef vector<int> vi;
-typedef vector<vector<int>> vvi;
-
-typedef pair<int, int> pii;
-typedef vector<pair<int, int>> vpii;
-
-// ------------------------------------------- //
-
-// Global Variable --------------------------- //
-int n;
-int a, b;
-vector<int> myVector;
-vector<vector<int>> myVector2;
-// ------------------------------------------- //
-
-// Function ---------------------------------- //
 void solve() {
-
 }
-// ------------------------------------------- //
 
 int main() {
-	//ios_base::sync_with_stdio(false);
-	int T; scanf("%d", &T); while (T--) {
-		int temp, temp1, temp2;
-		scanf("%d", &n);
-		scanf("%d %d", &a, &b);
-
-		// myVector.clear();
-		// myVector = vector<int>(n, 0);
-
-
-	}
-	return 0;
+    //freopen("input.txt", "r", stdin);
+    solve();
+    return 0;
 }
